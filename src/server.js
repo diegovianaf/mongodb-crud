@@ -1,7 +1,10 @@
 const express = require('express')
 const path = require('path')
+const db = require('./database')
 
 const app = express()
+
+db.connect()
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
