@@ -1,5 +1,7 @@
 const router = require('express').Router()
 
+const CustomersController = require('../controllers/customers')
+
 router.get('/', (req, res) => {
   res.render('index', {
     title: 'Home Page'
@@ -11,5 +13,7 @@ router.get('/register', (req, res) => {
     title: 'Clients Register'
   })
 })
+
+router.post('/register/add', CustomersController.add)
 
 module.exports = router
