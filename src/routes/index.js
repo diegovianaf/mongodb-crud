@@ -2,7 +2,13 @@ const router = require('express').Router()
 
 router.get('/', (req, res) => {
   res.render('index', {
-    title: 'Title Test'
+    title: 'Home Page'
+  })
+})
+
+router.get('/register', (req, res) => {
+  res.render('register', {
+    title: 'Clients Register'
   })
 })
 
