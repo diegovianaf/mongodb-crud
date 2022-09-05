@@ -6,23 +6,29 @@
 
   <h1><%= title %> </h1>
 
+  <p class="message">
+    <% if (typeof message !== 'undefined') { %>
+      <%= message %>
+    <% } %>
+  </p>
+
   <div class="form">
-    <form action="/register/add" method="post">
+    <form action="/register" method="post">
       <div>
         <label for="name">Name</label>
-        <input type="text" name="name" placeholder="Enter your name">
+        <input type="text" name="name" placeholder="Enter your name" required>
       </div>
       <div>
         <label for="age">Age</label>
-        <input type="text" name="age" placeholder="Enter your age">
+        <input type="text" name="age" placeholder="Enter your age" required>
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="Enter your email">
+        <input type="email" name="email" placeholder="Enter your email" required>
       </div>
       <div>
         <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Enter your password">
+        <input type="password" name="password" placeholder="Enter your password" required>
       </div>
       <button type="submit">Register</button>
     </form>

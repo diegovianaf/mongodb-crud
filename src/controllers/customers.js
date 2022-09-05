@@ -1,9 +1,11 @@
 const CustomersModel = require('../models/customers')
 const { crypto } = require('../utils/password')
 
+const defaultTitle = 'Registration of Clients'
+
 function index(req, res) {
   res.render('register', {
-    title: 'Clients Register'
+    title: defaultTitle,
   })
 }
 
@@ -25,7 +27,10 @@ async function add(req, res) {
   })
 
   register.save()
-  res.send('Successful register!')
+  res.render('register', {
+    title: defaultTitle,
+    message: 'Registration completed successfully!',
+  })
 }
 
 async function listUsers(req, res) {
