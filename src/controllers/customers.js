@@ -1,6 +1,12 @@
 const CustomerModel = require('../models/customers')
 const { crypto } = require('../utils/password')
 
+function index(req, res) {
+  res.render('register', {
+    title: 'Clients Register'
+  })
+}
+
 async function add(req, res) {
   const {
     name,
@@ -23,5 +29,6 @@ async function add(req, res) {
 }
 
 module.exports = {
-  add
+  index,
+  add,
 }
