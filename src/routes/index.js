@@ -8,4 +8,6 @@ router.get('/', IndexController.index)
 router.get('/register', CustomersController.index)
 router.post('/register/add', CustomersController.add)
 
+router.get('/list', CustomersController.listUsers)
+
 module.exports = router

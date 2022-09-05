@@ -1,4 +1,4 @@
-const CustomerModel = require('../models/customers')
+const CustomersModel = require('../models/customers')
 const { crypto } = require('../utils/password')
 
 function index(req, res) {
@@ -17,7 +17,7 @@ async function add(req, res) {
 
   const passwordCrypto = await crypto(password)
 
-  const register = new CustomerModel({
+  const register = new CustomersModel({
     name,
     age,
     email,
@@ -28,7 +28,17 @@ async function add(req, res) {
   res.send('Successful register!')
 }
 
+async function listUsers(req, res) {
+  const users = await CustomersModel.find()
+
+  res.render('listUsers', {
+    title: 'List of Users',
+    users,
+  })
+}
+
 module.exports = {
   index,
   add,
+  listUsers,
 }
