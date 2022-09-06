@@ -10,4 +10,7 @@ router.post('/register', CustomersController.add)
 
 router.get('/list', CustomersController.listUsers)
 
+router.get('/update', CustomersController.formUpdate)
+router.post('/update/:id', CustomersController.update)
+
 module.exports = router

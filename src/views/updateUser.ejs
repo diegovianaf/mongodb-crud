@@ -13,24 +13,20 @@
   </p>
 
   <div class="form">
-    <form action="/register" method="post">
+    <form action="/update/<%= user._id %>" method="post">
       <div>
         <label for="name">Name</label>
-        <input type="text" name="name" placeholder="Enter your name" required>
+        <input type="text" name="name" placeholder="Enter your name" value="<%= user.name %> ">
       </div>
       <div>
         <label for="age">Age</label>
-        <input type="number" name="age" placeholder="Enter your age" required>
+        <input type="number" name="age" placeholder="Enter your age" value="<%= user.age %>">
       </div>
       <div>
         <label for="email">Email</label>
-        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="email" name="email" placeholder="Enter your email" value="<%= user.email %>">
       </div>
-      <div>
-        <label for="password">Password</label>
-        <input type="password" name="password" placeholder="Enter your password" required>
-      </div>
-      <button type="submit">Register</button>
+      <button type="submit">Update</button>
     </form>
   </div>
 

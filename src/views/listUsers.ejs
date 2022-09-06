@@ -12,6 +12,7 @@
         <%= user.name %> - 
         age: <%= user.age %> -
         <%= user.email %> 
+        <a href="/update?id=<%= user._id %>">[edit]</a>
       </li>
     <% }) %>
   </ul>

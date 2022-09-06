@@ -42,8 +42,45 @@ async function listUsers(req, res) {
   })
 }
 
+async function formUpdate(req, res) {
+  const { id } = req.query
+
+  const user = await CustomersModel.findById(id)
+
+  res.render('updateUser', {
+    title: 'Update User',
+    user,
+  })
+}
+
+async function update(req, res) {
+  const {
+    name,
+    age,
+    email,
+  } = req.body
+
+  const { id } = req.params
+
+  const user = await CustomersModel.findById(id)
+
+  user.name = name
+  user.age = age
+  user.email = email
+
+  user.save()
+
+  res.render('updateUser', {
+    title: 'Update User',
+    user,
+    message: 'User successfully updated!'
+  })
+}
+
 module.exports = {
   index,
   add,
   listUsers,
+  formUpdate,
+  update,
 }
